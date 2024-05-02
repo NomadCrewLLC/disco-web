@@ -26,7 +26,7 @@ export default function Home() {
             <div class="relative mx-auto px-4 sm:px-12 xl:max-w-6xl xl:px-0">
                 <div class="text-center">
                     <h2 class="text-4xl font-bold text-gray-800 dark:text-white xl:text-5xl">A technology-first approach</h2>
-                    <p class="mx-auto mt-6 text-gray-700 dark:text-gray-300 md:w-3/4 lg:w-3/5">A growing team doesn't need to mean growing pains. Privacy, and the right tool for every step of your journey - Jira Software friction - company size.</p>
+                    <p class="mx-auto mt-6 text-gray-700 dark:text-gray-300 md:w-3/4 lg:w-3/5">A growing team doesn&apos;t need to mean growing pains. Privacy, and the right tool for every step of your journey - Jira Software friction - company size.</p>
                 </div>
                 <div class="mt-16 grid gap-8 sm:mx-auto sm:w-2/3 md:w-full md:grid-cols-2 lg:grid-cols-3">
                     <div class="rounded-3xl border border-gray-100 bg-white p-8 py-12 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none sm:p-12">
