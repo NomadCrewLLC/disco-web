@@ -1,17 +1,10 @@
-// "use client"
 import {Navigation} from './ui/Navigation.js'
 import { HeroSection } from './ui/HeroSection.js'
-import getFrontPageData from './data/homePage.data.js'
 import RichData from './ui/RichDataDisplay.js'
 
 
 
 export default async function Home() {
-  const { data } = await getFrontPageData();
-  console.log('data', data)
-  const headline = RichData(data.attributes.Headline);
-  const subheadline = RichData(data.attributes.Subheadline);
-  const heroImage = data.attributes.hero.data.attributes;
   return (
     <main className="overflow-y- min-h-screen scroll-smooth bg-white selection:bg-primary/10 selection:text-primary dark:bg-gray-900">
 
@@ -19,9 +12,9 @@ export default async function Home() {
       <Navigation />
       <HeroSection
         theme="light"
-        headlineNode={headline}
-        subheadlineText={subheadline}
-        image={heroImage}
+        headlineNode={<h1>This is your <span className="text-accent">product headline</span>, AKA your main value prop</h1>}
+        subheadlineText="This should contain a supporting statement that explains more specifically what the product is or does and for who."
+        image="https://ampire-lite.tailus.io/images/team.svg"
         primaryCTAText="Primary CTA"
         secondaryCTAText="Secondary CTA"
       />

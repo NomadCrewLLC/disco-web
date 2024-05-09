@@ -2,7 +2,6 @@ import { ThemeButton } from "./ThemeButton";
 import Image from 'next/image';
 
 export function HeroSection({ theme, headlineNode, subheadlineText, image, primaryCTAText, secondaryCTAText }) {
-    console.log('image', image);
 
     return (
         <section className={`${theme} light text-foreground bg-background py-32 sm:pt-40 md:pt-48`}>
@@ -26,7 +25,7 @@ export function HeroSection({ theme, headlineNode, subheadlineText, image, prima
                         </div>
                 </div>
                 <div>
-                    <Image className="w-full" src={`http://localhost:1337${image.url}`} alt="project illustration" height="600" width="800" />
+                    <Image className="w-full" src={image} alt="project illustration" height="600" width="800" />
                 </div>
             </div>
             </div>
