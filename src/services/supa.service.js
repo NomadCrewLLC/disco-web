@@ -18,12 +18,30 @@ export const getAuthUser = async () => {
 
 export const supaLogin = async ({ email, password }) => {
   const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-  console.log('supaLogin data', data);
   if (error) throw error;
   return data;
 };
 
 export const supaLogout = async () => {
   const result = await supabase.auth.signOut();
-  console.log(`supaLogout result`, result);
+};
+
+export const getMeetings = async () => {
+  const { data, error } = await supabase
+    .from('meetings')
+    .select('*');
+  if (error) {
+    throw error;
+  }
+  return data;
+};
+
+export const supaGenerateSummary = async (meetingId) => {
+  const { data, error } = await supabase.functions.invoke('openai', {
+    body: JSON.stringify({ meetingId }),
+  });
+  if (error) {
+    throw error;
+  }
+  return data;
 };

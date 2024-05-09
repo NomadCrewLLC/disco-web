@@ -1,4 +1,3 @@
-import { ReactQueryClientProvider } from '@/components/ReactQueryClientProvider';
 import { Inter } from 'next/font/google';
 import { Providers } from '../providers';
 import '../globals.css';
@@ -15,9 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className="light">
       <body className={inter.className}>
         <Providers>
-          <ReactQueryClientProvider>
-            {children}
-          </ReactQueryClientProvider>
+          {children}
         </Providers>
       </body>
     </html>
