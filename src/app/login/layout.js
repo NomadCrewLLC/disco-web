@@ -1,20 +1,23 @@
-import { Inter } from "next/font/google";
-import {Providers} from "../providers";
-import "../globals.css";
+import { ReactQueryClientProvider } from '@/components/ReactQueryClientProvider';
+import { Inter } from 'next/font/google';
+import { Providers } from '../providers';
+import '../globals.css';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: "Disco Login",
-  description: "",
+  title: 'Disco Login',
+  description: '',
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className='light'>
+    <html lang="en" className="light">
       <body className={inter.className}>
         <Providers>
-          {children}
+          <ReactQueryClientProvider>
+            {children}
+          </ReactQueryClientProvider>
         </Providers>
       </body>
     </html>
