@@ -1,5 +1,6 @@
 'use client';
 
+import { PageWrapper } from '@/components/PageWrapper';
 import { getMeetings, supaGenerateSummary } from '@/services/supa.service';
 import { Button, Card, CardBody, CardHeader, Spinner } from '@nextui-org/react';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
@@ -12,9 +13,7 @@ export default function Meetings() {
   }
 
   return (
-    <div
-      className="dark darkPrimary text-foreground bg-background overflow-y- min-h-screen scroll-smooth selection:bg-primary/10 selection:text-primary text-center p-4">
-      <h1 className="logo">DISCO <span className="emoji">🕺</span></h1>
+    <PageWrapper>
       {error && <div>Error: {error.message}</div>}
       {isLoading && (
         <>
@@ -50,7 +49,7 @@ export default function Meetings() {
        Main
        - Meetings List -> Individual Meeting
        */}
-    </div>
+    </PageWrapper>
   );
 }
 
@@ -62,7 +61,7 @@ function useData() {
   const { data: meetings, error: meetingsError, isFetching } = useQuery({
     queryKey: ['getMeetings'],
     queryFn: getMeetings,
-    initialData: [],
+    // initialData: [],
   });
 
   // Mutations
