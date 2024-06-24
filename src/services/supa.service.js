@@ -36,6 +36,17 @@ export const getMeetings = async () => {
   return data;
 };
 
+export const getMeetingById = async (id) => {
+  const { data, error } = await supabase
+  .from('meetings')
+  .select()
+  .eq('id', id);
+if (error) {
+  throw error;
+}
+return {data};
+}
+
 export const supaGenerateSummary = async (meetingId) => {
   const { data, error } = await supabase.functions.invoke('openai', {
     body: JSON.stringify({ meetingId }),
